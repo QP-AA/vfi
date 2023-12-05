@@ -1,0 +1,869 @@
+/home/gaojinwang/anaconda3/envs/amt/lib/python3.8/site-packages/torch/distributed/launch.py:178: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use_env is set by default in torchrun.
+If your script expects `--local_rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  warnings.warn(
+WARNING:torch.distributed.run:
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+Rank 3 is available
+Rank 4 is available
+Rank 1 is available
+world_size:  8
+Rank 0 is available
+Rank 5 is available
+Rank 2 is available
+Rank 6 is available
+Rank 7 is available
+using GPU 7 for training
+using GPU 3 for training
+[**] create folder work_dir/AMT-S_floloss1e-2_300epoch_bs24_lr2e-4
+using GPU 0 for training
+base_trainer
+using GPU 5 for training
+using GPU 6 for training
+using GPU 2 for training
+using GPU 1 for training
+using GPU 4 for training
+DistributedDataParallel(
+  (module): Model(
+    (feat_encoder): SmallEncoder(
+      (norm1): InstanceNorm2d(32, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (conv1): Conv2d(3, 32, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3))
+      (relu1): ReLU(inplace=True)
+      (layer1): Sequential(
+        (0): BottleneckBlock(
+          (conv1): Conv2d(32, 8, kernel_size=(1, 1), stride=(1, 1))
+          (conv2): Conv2d(8, 8, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (conv3): Conv2d(8, 32, kernel_size=(1, 1), stride=(1, 1))
+          (relu): ReLU(inplace=True)
+          (norm1): InstanceNorm2d(8, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (norm2): InstanceNorm2d(8, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (norm3): InstanceNorm2d(32, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+        )
+        (1): BottleneckBlock(
+          (conv1): Conv2d(32, 8, kernel_size=(1, 1), stride=(1, 1))
+          (conv2): Conv2d(8, 8, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (conv3): Conv2d(8, 32, kernel_size=(1, 1), stride=(1, 1))
+          (relu): ReLU(inplace=True)
+          (norm1): InstanceNorm2d(8, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (norm2): InstanceNorm2d(8, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (norm3): InstanceNorm2d(32, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+        )
+      )
+      (layer2): Sequential(
+        (0): BottleneckBlock(
+          (conv1): Conv2d(32, 16, kernel_size=(1, 1), stride=(1, 1))
+          (conv2): Conv2d(16, 16, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+          (conv3): Conv2d(16, 64, kernel_size=(1, 1), stride=(1, 1))
+          (relu): ReLU(inplace=True)
+          (norm1): InstanceNorm2d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (norm2): InstanceNorm2d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (norm3): InstanceNorm2d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (norm4): InstanceNorm2d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (downsample): Sequential(
+            (0): Conv2d(32, 64, kernel_size=(1, 1), stride=(2, 2))
+            (1): InstanceNorm2d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          )
+        )
+        (1): BottleneckBlock(
+          (conv1): Conv2d(64, 16, kernel_size=(1, 1), stride=(1, 1))
+          (conv2): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (conv3): Conv2d(16, 64, kernel_size=(1, 1), stride=(1, 1))
+          (relu): ReLU(inplace=True)
+          (norm1): InstanceNorm2d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (norm2): InstanceNorm2d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (norm3): InstanceNorm2d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+        )
+      )
+      (layer3): Sequential(
+        (0): BottleneckBlock(
+          (conv1): Conv2d(64, 24, kernel_size=(1, 1), stride=(1, 1))
+          (conv2): Conv2d(24, 24, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+          (conv3): Conv2d(24, 96, kernel_size=(1, 1), stride=(1, 1))
+          (relu): ReLU(inplace=True)
+          (norm1): InstanceNorm2d(24, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (norm2): InstanceNorm2d(24, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (norm3): InstanceNorm2d(96, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (norm4): InstanceNorm2d(96, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (downsample): Sequential(
+            (0): Conv2d(64, 96, kernel_size=(1, 1), stride=(2, 2))
+            (1): InstanceNorm2d(96, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          )
+        )
+        (1): BottleneckBlock(
+          (conv1): Conv2d(96, 24, kernel_size=(1, 1), stride=(1, 1))
+          (conv2): Conv2d(24, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (conv3): Conv2d(24, 96, kernel_size=(1, 1), stride=(1, 1))
+          (relu): ReLU(inplace=True)
+          (norm1): InstanceNorm2d(24, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (norm2): InstanceNorm2d(24, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (norm3): InstanceNorm2d(96, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+        )
+      )
+      (conv2): Conv2d(96, 84, kernel_size=(1, 1), stride=(1, 1))
+    )
+    (encoder): Encoder(
+      (pyramid1): Sequential(
+        (0): Sequential(
+          (0): Conv2d(3, 20, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+          (1): PReLU(num_parameters=20)
+        )
+        (1): Sequential(
+          (0): Conv2d(20, 20, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): PReLU(num_parameters=20)
+        )
+      )
+      (pyramid2): Sequential(
+        (0): Sequential(
+          (0): Conv2d(20, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+          (1): PReLU(num_parameters=32)
+        )
+        (1): Sequential(
+          (0): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): PReLU(num_parameters=32)
+        )
+      )
+      (pyramid3): Sequential(
+        (0): Sequential(
+          (0): Conv2d(32, 44, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+          (1): PReLU(num_parameters=44)
+        )
+        (1): Sequential(
+          (0): Conv2d(44, 44, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): PReLU(num_parameters=44)
+        )
+      )
+      (pyramid4): Sequential(
+        (0): Sequential(
+          (0): Conv2d(44, 56, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+          (1): PReLU(num_parameters=56)
+        )
+        (1): Sequential(
+          (0): Conv2d(56, 56, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): PReLU(num_parameters=56)
+        )
+      )
+    )
+    (decoder4): InitDecoder(
+      (convblock): Sequential(
+        (0): Sequential(
+          (0): Conv2d(113, 112, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): PReLU(num_parameters=112)
+        )
+        (1): ResBlock(
+          (conv1): Sequential(
+            (0): Conv2d(112, 112, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            (1): PReLU(num_parameters=112)
+          )
+          (conv2): Sequential(
+            (0): Conv2d(20, 20, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            (1): PReLU(num_parameters=20)
+          )
+          (conv3): Sequential(
+            (0): Conv2d(112, 112, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            (1): PReLU(num_parameters=112)
+          )
+          (conv4): Sequential(
+            (0): Conv2d(20, 20, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            (1): PReLU(num_parameters=20)
+          )
+          (conv5): Conv2d(112, 112, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (prelu): PReLU(num_parameters=112)
+        )
+        (2): ConvTranspose2d(112, 48, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      )
+    )
+    (decoder3): IntermediateDecoder(
+      (convblock): Sequential(
+        (0): Sequential(
+          (0): Conv2d(136, 132, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): PReLU(num_parameters=132)
+        )
+        (1): ResBlock(
+          (conv1): Sequential(
+            (0): Conv2d(132, 132, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            (1): PReLU(num_parameters=132)
+          )
+          (conv2): Sequential(
+            (0): Conv2d(20, 20, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            (1): PReLU(num_parameters=20)
+          )
+          (conv3): Sequential(
+            (0): Conv2d(132, 132, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            (1): PReLU(num_parameters=132)
+          )
+          (conv4): Sequential(
+            (0): Conv2d(20, 20, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            (1): PReLU(num_parameters=20)
+          )
+          (conv5): Conv2d(132, 132, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (prelu): PReLU(num_parameters=132)
+        )
+        (2): ConvTranspose2d(132, 36, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      )
+    )
+    (decoder2): IntermediateDecoder(
+      (convblock): Sequential(
+        (0): Sequential(
+          (0): Conv2d(100, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): PReLU(num_parameters=96)
+        )
+        (1): ResBlock(
+          (conv1): Sequential(
+            (0): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            (1): PReLU(num_parameters=96)
+          )
+          (conv2): Sequential(
+            (0): Conv2d(20, 20, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            (1): PReLU(num_parameters=20)
+          )
+          (conv3): Sequential(
+            (0): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            (1): PReLU(num_parameters=96)
+          )
+          (conv4): Sequential(
+            (0): Conv2d(20, 20, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            (1): PReLU(num_parameters=20)
+          )
+          (conv5): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (prelu): PReLU(num_parameters=96)
+        )
+        (2): ConvTranspose2d(96, 24, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      )
+    )
+    (decoder1): MultiFlowDecoder(
+      (convblock): Sequential(
+        (0): Sequential(
+          (0): Conv2d(64, 60, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): PReLU(num_parameters=60)
+        )
+        (1): ResBlock(
+          (conv1): Sequential(
+            (0): Conv2d(60, 60, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            (1): PReLU(num_parameters=60)
+          )
+          (conv2): Sequential(
+            (0): Conv2d(20, 20, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            (1): PReLU(num_parameters=20)
+          )
+          (conv3): Sequential(
+            (0): Conv2d(60, 60, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            (1): PReLU(num_parameters=60)
+          )
+          (conv4): Sequential(
+            (0): Conv2d(20, 20, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            (1): PReLU(num_parameters=20)
+          )
+          (conv5): Conv2d(60, 60, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (prelu): PReLU(num_parameters=60)
+        )
+        (2): ConvTranspose2d(60, 24, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      )
+    )
+    (update4): SmallUpdateBlock(
+      (convc1): Conv2d(392, 64, kernel_size=(1, 1), stride=(1, 1))
+      (convf1): Conv2d(4, 40, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3))
+      (convf2): Conv2d(40, 20, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv): Conv2d(84, 68, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (gru): Sequential(
+        (0): Conv2d(116, 76, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): LeakyReLU(negative_slope=0.1, inplace=True)
+        (2): Conv2d(76, 76, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+      (feat_head): Sequential(
+        (0): Conv2d(76, 76, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): LeakyReLU(negative_slope=0.1, inplace=True)
+        (2): Conv2d(76, 44, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+      (flow_head): Sequential(
+        (0): Conv2d(76, 76, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): LeakyReLU(negative_slope=0.1, inplace=True)
+        (2): Conv2d(76, 4, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+      (lrelu): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (update3): SmallUpdateBlock(
+      (convc1): Conv2d(392, 64, kernel_size=(1, 1), stride=(1, 1))
+      (convf1): Conv2d(4, 40, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3))
+      (convf2): Conv2d(40, 20, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv): Conv2d(84, 68, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (gru): Sequential(
+        (0): Conv2d(104, 76, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): LeakyReLU(negative_slope=0.1, inplace=True)
+        (2): Conv2d(76, 76, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+      (feat_head): Sequential(
+        (0): Conv2d(76, 76, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): LeakyReLU(negative_slope=0.1, inplace=True)
+        (2): Conv2d(76, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+      (flow_head): Sequential(
+        (0): Conv2d(76, 76, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): LeakyReLU(negative_slope=0.1, inplace=True)
+        (2): Conv2d(76, 4, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+      (lrelu): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (update2): SmallUpdateBlock(
+      (convc1): Conv2d(392, 64, kernel_size=(1, 1), stride=(1, 1))
+      (convf1): Conv2d(4, 40, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3))
+      (convf2): Conv2d(40, 20, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv): Conv2d(84, 68, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (gru): Sequential(
+        (0): Conv2d(92, 76, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): LeakyReLU(negative_slope=0.1, inplace=True)
+        (2): Conv2d(76, 76, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+      (feat_head): Sequential(
+        (0): Conv2d(76, 76, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): LeakyReLU(negative_slope=0.1, inplace=True)
+        (2): Conv2d(76, 20, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+      (flow_head): Sequential(
+        (0): Conv2d(76, 76, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): LeakyReLU(negative_slope=0.1, inplace=True)
+        (2): Conv2d(76, 4, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+      (lrelu): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (comb_block): Sequential(
+      (0): Conv2d(9, 18, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): PReLU(num_parameters=18)
+      (2): Conv2d(18, 3, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+  )
+)
+2023-12-04 08:55:21,628 logger.py[line:55]INFO DistributedDataParallel(
+  (module): Model(
+    (feat_encoder): SmallEncoder(
+      (norm1): InstanceNorm2d(32, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (conv1): Conv2d(3, 32, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3))
+      (relu1): ReLU(inplace=True)
+      (layer1): Sequential(
+        (0): BottleneckBlock(
+          (conv1): Conv2d(32, 8, kernel_size=(1, 1), stride=(1, 1))
+          (conv2): Conv2d(8, 8, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (conv3): Conv2d(8, 32, kernel_size=(1, 1), stride=(1, 1))
+          (relu): ReLU(inplace=True)
+          (norm1): InstanceNorm2d(8, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (norm2): InstanceNorm2d(8, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (norm3): InstanceNorm2d(32, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+        )
+        (1): BottleneckBlock(
+          (conv1): Conv2d(32, 8, kernel_size=(1, 1), stride=(1, 1))
+          (conv2): Conv2d(8, 8, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (conv3): Conv2d(8, 32, kernel_size=(1, 1), stride=(1, 1))
+          (relu): ReLU(inplace=True)
+          (norm1): InstanceNorm2d(8, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (norm2): InstanceNorm2d(8, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (norm3): InstanceNorm2d(32, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+        )
+      )
+      (layer2): Sequential(
+        (0): BottleneckBlock(
+          (conv1): Conv2d(32, 16, kernel_size=(1, 1), stride=(1, 1))
+          (conv2): Conv2d(16, 16, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+          (conv3): Conv2d(16, 64, kernel_size=(1, 1), stride=(1, 1))
+          (relu): ReLU(inplace=True)
+          (norm1): InstanceNorm2d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (norm2): InstanceNorm2d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (norm3): InstanceNorm2d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (norm4): InstanceNorm2d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (downsample): Sequential(
+            (0): Conv2d(32, 64, kernel_size=(1, 1), stride=(2, 2))
+            (1): InstanceNorm2d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          )
+        )
+        (1): BottleneckBlock(
+          (conv1): Conv2d(64, 16, kernel_size=(1, 1), stride=(1, 1))
+          (conv2): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (conv3): Conv2d(16, 64, kernel_size=(1, 1), stride=(1, 1))
+          (relu): ReLU(inplace=True)
+          (norm1): InstanceNorm2d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (norm2): InstanceNorm2d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (norm3): InstanceNorm2d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+        )
+      )
+      (layer3): Sequential(
+        (0): BottleneckBlock(
+          (conv1): Conv2d(64, 24, kernel_size=(1, 1), stride=(1, 1))
+          (conv2): Conv2d(24, 24, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+          (conv3): Conv2d(24, 96, kernel_size=(1, 1), stride=(1, 1))
+          (relu): ReLU(inplace=True)
+          (norm1): InstanceNorm2d(24, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (norm2): InstanceNorm2d(24, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (norm3): InstanceNorm2d(96, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (norm4): InstanceNorm2d(96, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (downsample): Sequential(
+            (0): Conv2d(64, 96, kernel_size=(1, 1), stride=(2, 2))
+            (1): InstanceNorm2d(96, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          )
+        )
+        (1): BottleneckBlock(
+          (conv1): Conv2d(96, 24, kernel_size=(1, 1), stride=(1, 1))
+          (conv2): Conv2d(24, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (conv3): Conv2d(24, 96, kernel_size=(1, 1), stride=(1, 1))
+          (relu): ReLU(inplace=True)
+          (norm1): InstanceNorm2d(24, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (norm2): InstanceNorm2d(24, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (norm3): InstanceNorm2d(96, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+        )
+      )
+      (conv2): Conv2d(96, 84, kernel_size=(1, 1), stride=(1, 1))
+    )
+    (encoder): Encoder(
+      (pyramid1): Sequential(
+        (0): Sequential(
+          (0): Conv2d(3, 20, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+          (1): PReLU(num_parameters=20)
+        )
+        (1): Sequential(
+          (0): Conv2d(20, 20, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): PReLU(num_parameters=20)
+        )
+      )
+      (pyramid2): Sequential(
+        (0): Sequential(
+          (0): Conv2d(20, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+          (1): PReLU(num_parameters=32)
+        )
+        (1): Sequential(
+          (0): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): PReLU(num_parameters=32)
+        )
+      )
+      (pyramid3): Sequential(
+        (0): Sequential(
+          (0): Conv2d(32, 44, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+          (1): PReLU(num_parameters=44)
+        )
+        (1): Sequential(
+          (0): Conv2d(44, 44, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): PReLU(num_parameters=44)
+        )
+      )
+      (pyramid4): Sequential(
+        (0): Sequential(
+          (0): Conv2d(44, 56, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+          (1): PReLU(num_parameters=56)
+        )
+        (1): Sequential(
+          (0): Conv2d(56, 56, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): PReLU(num_parameters=56)
+        )
+      )
+    )
+    (decoder4): InitDecoder(
+      (convblock): Sequential(
+        (0): Sequential(
+          (0): Conv2d(113, 112, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): PReLU(num_parameters=112)
+        )
+        (1): ResBlock(
+          (conv1): Sequential(
+            (0): Conv2d(112, 112, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            (1): PReLU(num_parameters=112)
+          )
+          (conv2): Sequential(
+            (0): Conv2d(20, 20, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            (1): PReLU(num_parameters=20)
+          )
+          (conv3): Sequential(
+            (0): Conv2d(112, 112, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            (1): PReLU(num_parameters=112)
+          )
+          (conv4): Sequential(
+            (0): Conv2d(20, 20, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            (1): PReLU(num_parameters=20)
+          )
+          (conv5): Conv2d(112, 112, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (prelu): PReLU(num_parameters=112)
+        )
+        (2): ConvTranspose2d(112, 48, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      )
+    )
+    (decoder3): IntermediateDecoder(
+      (convblock): Sequential(
+        (0): Sequential(
+          (0): Conv2d(136, 132, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): PReLU(num_parameters=132)
+        )
+        (1): ResBlock(
+          (conv1): Sequential(
+            (0): Conv2d(132, 132, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            (1): PReLU(num_parameters=132)
+          )
+          (conv2): Sequential(
+            (0): Conv2d(20, 20, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            (1): PReLU(num_parameters=20)
+          )
+          (conv3): Sequential(
+            (0): Conv2d(132, 132, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            (1): PReLU(num_parameters=132)
+          )
+          (conv4): Sequential(
+            (0): Conv2d(20, 20, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            (1): PReLU(num_parameters=20)
+          )
+          (conv5): Conv2d(132, 132, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (prelu): PReLU(num_parameters=132)
+        )
+        (2): ConvTranspose2d(132, 36, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      )
+    )
+    (decoder2): IntermediateDecoder(
+      (convblock): Sequential(
+        (0): Sequential(
+          (0): Conv2d(100, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): PReLU(num_parameters=96)
+        )
+        (1): ResBlock(
+          (conv1): Sequential(
+            (0): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            (1): PReLU(num_parameters=96)
+          )
+          (conv2): Sequential(
+            (0): Conv2d(20, 20, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            (1): PReLU(num_parameters=20)
+          )
+          (conv3): Sequential(
+            (0): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            (1): PReLU(num_parameters=96)
+          )
+          (conv4): Sequential(
+            (0): Conv2d(20, 20, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            (1): PReLU(num_parameters=20)
+          )
+          (conv5): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (prelu): PReLU(num_parameters=96)
+        )
+        (2): ConvTranspose2d(96, 24, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      )
+    )
+    (decoder1): MultiFlowDecoder(
+      (convblock): Sequential(
+        (0): Sequential(
+          (0): Conv2d(64, 60, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): PReLU(num_parameters=60)
+        )
+        (1): ResBlock(
+          (conv1): Sequential(
+            (0): Conv2d(60, 60, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            (1): PReLU(num_parameters=60)
+          )
+          (conv2): Sequential(
+            (0): Conv2d(20, 20, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            (1): PReLU(num_parameters=20)
+          )
+          (conv3): Sequential(
+            (0): Conv2d(60, 60, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            (1): PReLU(num_parameters=60)
+          )
+          (conv4): Sequential(
+            (0): Conv2d(20, 20, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            (1): PReLU(num_parameters=20)
+          )
+          (conv5): Conv2d(60, 60, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (prelu): PReLU(num_parameters=60)
+        )
+        (2): ConvTranspose2d(60, 24, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      )
+    )
+    (update4): SmallUpdateBlock(
+      (convc1): Conv2d(392, 64, kernel_size=(1, 1), stride=(1, 1))
+      (convf1): Conv2d(4, 40, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3))
+      (convf2): Conv2d(40, 20, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv): Conv2d(84, 68, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (gru): Sequential(
+        (0): Conv2d(116, 76, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): LeakyReLU(negative_slope=0.1, inplace=True)
+        (2): Conv2d(76, 76, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+      (feat_head): Sequential(
+        (0): Conv2d(76, 76, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): LeakyReLU(negative_slope=0.1, inplace=True)
+        (2): Conv2d(76, 44, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+      (flow_head): Sequential(
+        (0): Conv2d(76, 76, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): LeakyReLU(negative_slope=0.1, inplace=True)
+        (2): Conv2d(76, 4, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+      (lrelu): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (update3): SmallUpdateBlock(
+      (convc1): Conv2d(392, 64, kernel_size=(1, 1), stride=(1, 1))
+      (convf1): Conv2d(4, 40, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3))
+      (convf2): Conv2d(40, 20, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv): Conv2d(84, 68, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (gru): Sequential(
+        (0): Conv2d(104, 76, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): LeakyReLU(negative_slope=0.1, inplace=True)
+        (2): Conv2d(76, 76, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+      (feat_head): Sequential(
+        (0): Conv2d(76, 76, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): LeakyReLU(negative_slope=0.1, inplace=True)
+        (2): Conv2d(76, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+      (flow_head): Sequential(
+        (0): Conv2d(76, 76, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): LeakyReLU(negative_slope=0.1, inplace=True)
+        (2): Conv2d(76, 4, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+      (lrelu): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (update2): SmallUpdateBlock(
+      (convc1): Conv2d(392, 64, kernel_size=(1, 1), stride=(1, 1))
+      (convf1): Conv2d(4, 40, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3))
+      (convf2): Conv2d(40, 20, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv): Conv2d(84, 68, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (gru): Sequential(
+        (0): Conv2d(92, 76, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): LeakyReLU(negative_slope=0.1, inplace=True)
+        (2): Conv2d(76, 76, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+      (feat_head): Sequential(
+        (0): Conv2d(76, 76, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): LeakyReLU(negative_slope=0.1, inplace=True)
+        (2): Conv2d(76, 20, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+      (flow_head): Sequential(
+        (0): Conv2d(76, 76, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): LeakyReLU(negative_slope=0.1, inplace=True)
+        (2): Conv2d(76, 4, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+      (lrelu): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (comb_block): Sequential(
+      (0): Conv2d(9, 18, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): PReLU(num_parameters=18)
+      (2): Conv2d(18, 3, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+  )
+)
+2023-12-04 08:59:32,699 logger.py[line:55]INFO [AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:100/641400 time:2.536(0.480) lr:2.000e-04 eta:451:46:01(451:50:12)
+l_rec:4.066e-02 l_ter:3.831e-02 l_flo:1.143e-02 best:0.00dB
+
+
+INFO:VFI:[AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:100/641400 time:2.536(0.480) lr:2.000e-04 eta:451:46:01(451:50:12)
+l_rec:4.066e-02 l_ter:3.831e-02 l_flo:1.143e-02 best:0.00dB
+
+
+2023-12-04 09:02:51,518 logger.py[line:55]INFO [AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:200/641400 time:1.988(0.002) lr:2.000e-04 eta:402:39:26(402:46:56)
+l_rec:2.685e-02 l_ter:2.553e-02 l_flo:1.065e-02 best:0.00dB
+
+
+INFO:VFI:[AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:200/641400 time:1.988(0.002) lr:2.000e-04 eta:402:39:26(402:46:56)
+l_rec:2.685e-02 l_ter:2.553e-02 l_flo:1.065e-02 best:0.00dB
+
+
+2023-12-04 09:06:17,700 logger.py[line:55]INFO [AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:300/641400 time:2.062(0.067) lr:2.000e-04 eta:390:44:48(390:55:44)
+l_rec:1.975e-02 l_ter:1.691e-02 l_flo:9.727e-03 best:0.00dB
+
+
+INFO:VFI:[AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:300/641400 time:2.062(0.067) lr:2.000e-04 eta:390:44:48(390:55:44)
+l_rec:1.975e-02 l_ter:1.691e-02 l_flo:9.727e-03 best:0.00dB
+
+
+2023-12-04 09:09:46,658 logger.py[line:55]INFO [AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:400/641400 time:2.090(0.849) lr:2.000e-04 eta:386:59(386:15:24)
+l_rec:1.760e-02 l_ter:1.414e-02 l_flo:9.078e-03 best:0.00dB
+
+
+INFO:VFI:[AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:400/641400 time:2.090(0.849) lr:2.000e-04 eta:386:59(386:15:24)
+l_rec:1.760e-02 l_ter:1.414e-02 l_flo:9.078e-03 best:0.00dB
+
+
+2023-12-04 09:12:55,866 logger.py[line:55]INFO [AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:500/641400 time:1.892(0.041) lr:2.000e-04 eta:376:06:46(376:24:20)
+l_rec:1.567e-02 l_ter:1.185e-02 l_flo:8.321e-03 best:0.00dB
+
+
+INFO:VFI:[AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:500/641400 time:1.892(0.041) lr:2.000e-04 eta:376:06:46(376:24:20)
+l_rec:1.567e-02 l_ter:1.185e-02 l_flo:8.321e-03 best:0.00dB
+
+
+2023-12-04 09:16:10,605 logger.py[line:55]INFO [AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:600/641400 time:1.947(0.831) lr:2.000e-04 eta:371:08:31(371:29:20)
+l_rec:1.664e-02 l_ter:1.294e-02 l_flo:7.768e-03 best:0.00dB
+
+
+INFO:VFI:[AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:600/641400 time:1.947(0.831) lr:2.000e-04 eta:371:08:31(371:29:20)
+l_rec:1.664e-02 l_ter:1.294e-02 l_flo:7.768e-03 best:0.00dB
+
+
+2023-12-04 09:19:35,574 logger.py[line:55]INFO [AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:700/641400 time:2.050(0.674) lr:2.000e-04 eta:370:10:56(370:35:10)
+l_rec:1.510e-02 l_ter:1.140e-02 l_flo:7.841e-03 best:0.00dB
+
+
+INFO:VFI:[AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:700/641400 time:2.050(0.674) lr:2.000e-04 eta:370:10:56(370:35:10)
+l_rec:1.510e-02 l_ter:1.140e-02 l_flo:7.841e-03 best:0.00dB
+
+
+2023-12-04 09:22:46,757 logger.py[line:55]INFO [AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:800/641400 time:1.912(0.081) lr:2.000e-04 eta:366:22:43(366:50:08)
+l_rec:1.463e-02 l_ter:1.107e-02 l_flo:7.484e-03 best:0.00dB
+
+
+INFO:VFI:[AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:800/641400 time:1.912(0.081) lr:2.000e-04 eta:366:22:43(366:50:08)
+l_rec:1.463e-02 l_ter:1.107e-02 l_flo:7.484e-03 best:0.00dB
+
+
+2023-12-04 09:26:06,808 logger.py[line:55]INFO [AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:900/641400 time:2.000(0.036) lr:2.000e-04 eta:365:09:51(365:40:36)
+l_rec:1.326e-02 l_ter:9.152e-03 l_flo:7.110e-03 best:0.00dB
+
+
+INFO:VFI:[AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:900/641400 time:2.000(0.036) lr:2.000e-04 eta:365:09:51(365:40:36)
+l_rec:1.326e-02 l_ter:9.152e-03 l_flo:7.110e-03 best:0.00dB
+
+
+2023-12-04 09:29:20,581 logger.py[line:55]INFO [AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:1000/641400 time:1.938(0.002) lr:2.000e-04 eta:363:03:50(363:37:49)
+l_rec:1.536e-02 l_ter:1.133e-02 l_flo:7.311e-03 best:0.00dB
+
+
+INFO:VFI:[AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:1000/641400 time:1.938(0.002) lr:2.000e-04 eta:363:03:50(363:37:49)
+l_rec:1.536e-02 l_ter:1.133e-02 l_flo:7.311e-03 best:0.00dB
+
+
+2023-12-04 09:32:43,951 logger.py[line:55]INFO [AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:1100/641400 time:2.034(0.002) lr:2.000e-04 eta:362:53:21(363:30:43)
+l_rec:1.426e-02 l_ter:9.932e-03 l_flo:6.662e-03 best:0.00dB
+
+
+INFO:VFI:[AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:1100/641400 time:2.034(0.002) lr:2.000e-04 eta:362:53:21(363:30:43)
+l_rec:1.426e-02 l_ter:9.932e-03 l_flo:6.662e-03 best:0.00dB
+
+
+2023-12-04 09:36:01,981 logger.py[line:55]INFO [AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:1200/641400 time:1.980(0.002) lr:2.000e-04 eta:361:56:32(362:37:12)
+l_rec:1.290e-02 l_ter:8.869e-03 l_flo:6.813e-03 best:0.00dB
+
+
+INFO:VFI:[AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:1200/641400 time:1.980(0.002) lr:2.000e-04 eta:361:56:32(362:37:12)
+l_rec:1.290e-02 l_ter:8.869e-03 l_flo:6.813e-03 best:0.00dB
+
+
+2023-12-04 09:39:08,035 logger.py[line:55]INFO [AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:1300/641400 time:1.861(0.003) lr:2.000e-04 eta:359:29:36(360:13:23)
+l_rec:1.416e-02 l_ter:9.363e-03 l_flo:7.027e-03 best:0.00dB
+
+
+INFO:VFI:[AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:1300/641400 time:1.861(0.003) lr:2.000e-04 eta:359:29:36(360:13:23)
+l_rec:1.416e-02 l_ter:9.363e-03 l_flo:7.027e-03 best:0.00dB
+
+
+2023-12-04 09:42:24,023 logger.py[line:55]INFO [AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:1400/641400 time:1.960(0.002) lr:2.000e-04 eta:358:38:58(359:26:01)
+l_rec:1.311e-02 l_ter:9.009e-03 l_flo:6.688e-03 best:0.00dB
+
+
+INFO:VFI:[AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:1400/641400 time:1.960(0.002) lr:2.000e-04 eta:358:38:58(359:26:01)
+l_rec:1.311e-02 l_ter:9.009e-03 l_flo:6.688e-03 best:0.00dB
+
+
+2023-12-04 09:45:41,420 logger.py[line:55]INFO [AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:1500/641400 time:1.974(0.002) lr:2.000e-04 eta:358:04:41(358:55:01)
+l_rec:1.308e-02 l_ter:9.072e-03 l_flo:6.551e-03 best:0.00dB
+
+
+INFO:VFI:[AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:1500/641400 time:1.974(0.002) lr:2.000e-04 eta:358:04:41(358:55:01)
+l_rec:1.308e-02 l_ter:9.072e-03 l_flo:6.551e-03 best:0.00dB
+
+
+2023-12-04 09:48:59,855 logger.py[line:55]INFO [AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:1600/641400 time:1.984(0.002) lr:2.000e-04 eta:357:41:12(358:34:50)
+l_rec:1.257e-02 l_ter:8.387e-03 l_flo:6.450e-03 best:0.00dB
+
+
+INFO:VFI:[AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:1600/641400 time:1.984(0.002) lr:2.000e-04 eta:357:41:12(358:34:50)
+l_rec:1.257e-02 l_ter:8.387e-03 l_flo:6.450e-03 best:0.00dB
+
+
+2023-12-04 09:52:08,123 logger.py[line:55]INFO [AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:1700/641400 time:1.883(0.002) lr:2.000e-04 eta:356:16:18(357:13:04)
+l_rec:1.383e-02 l_ter:9.302e-03 l_flo:6.538e-03 best:0.00dB
+
+
+INFO:VFI:[AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:1700/641400 time:1.883(0.002) lr:2.000e-04 eta:356:16:18(357:13:04)
+l_rec:1.383e-02 l_ter:9.302e-03 l_flo:6.538e-03 best:0.00dB
+
+
+2023-12-04 09:55:26,111 logger.py[line:55]INFO [AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:1800/641400 time:1.980(0.002) lr:2.000e-04 eta:355:58:04(356:58:08)
+l_rec:1.323e-02 l_ter:9.107e-03 l_flo:6.281e-03 best:0.00dB
+
+
+INFO:VFI:[AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:1800/641400 time:1.980(0.002) lr:2.000e-04 eta:355:58:04(356:58:08)
+l_rec:1.323e-02 l_ter:9.107e-03 l_flo:6.281e-03 best:0.00dB
+
+
+2023-12-04 09:58:48,196 logger.py[line:55]INFO [AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:1900/641400 time:2.021(0.947) lr:2.000e-04 eta:356:04:25(357:07:51)
+l_rec:1.266e-02 l_ter:8.406e-03 l_flo:5.965e-03 best:0.00dB
+
+
+INFO:VFI:[AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:1900/641400 time:2.021(0.947) lr:2.000e-04 eta:356:04:25(357:07:51)
+l_rec:1.266e-02 l_ter:8.406e-03 l_flo:5.965e-03 best:0.00dB
+
+
+2023-12-04 10:02:05,257 logger.py[line:55]INFO [AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:2000/641400 time:1.971(0.103) lr:2.000e-04 eta:355:43:00(356:49:43)
+l_rec:1.293e-02 l_ter:8.403e-03 l_flo:6.415e-03 best:0.00dB
+
+
+INFO:VFI:[AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:2000/641400 time:1.971(0.103) lr:2.000e-04 eta:355:43:00(356:49:43)
+l_rec:1.293e-02 l_ter:8.403e-03 l_flo:6.415e-03 best:0.00dB
+
+
+2023-12-04 10:05:33,332 logger.py[line:55]INFO [AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:2100/641400 time:2.081(0.056) lr:2.000e-04 eta:356:19:13(357:29:25)
+l_rec:1.266e-02 l_ter:8.141e-03 l_flo:6.070e-03 best:0.00dB
+
+
+INFO:VFI:[AMT-S_floloss1e-2_300epoch_bs24_lr2e-4]epoch:1/300 iter:2100/641400 time:2.081(0.056) lr:2.000e-04 eta:356:19:13(357:29:25)
+l_rec:1.266e-02 l_ter:8.141e-03 l_flo:6.070e-03 best:0.00dB
+
+
+Traceback (most recent call last):
+  File "train.py", line 67, in <module>
+    main_worker(rank, cfg)
+  File "train.py", line 53, in main_worker
+    trainer.train()
+  File "/home/gaojinwang/vfi/AMT/trainers/base_trainer.py", line 184, in train
+    psnr, eval_t = self.evaluate(epoch)
+  File "/home/gaojinwang/vfi/AMT/trainers/base_trainer.py", line 209, in evaluate
+    psnr = calculate_psnr(imgt_pred[j].detach().unsqueeze(
+AttributeError: 'numpy.ndarray' object has no attribute 'cpu'
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 53561 closing signal SIGTERM
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 53565 closing signal SIGTERM
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 53568 closing signal SIGTERM
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 53571 closing signal SIGTERM
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 53577 closing signal SIGTERM
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 53582 closing signal SIGTERM
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 53586 closing signal SIGTERM
+ERROR:torch.distributed.elastic.multiprocessing.api:failed (exitcode: 1) local_rank: 0 (pid: 53555) of binary: /home/gaojinwang/anaconda3/envs/amt/bin/python
+Traceback (most recent call last):
+  File "/home/gaojinwang/anaconda3/envs/amt/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/gaojinwang/anaconda3/envs/amt/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/gaojinwang/anaconda3/envs/amt/lib/python3.8/site-packages/torch/distributed/launch.py", line 193, in <module>
+    main()
+  File "/home/gaojinwang/anaconda3/envs/amt/lib/python3.8/site-packages/torch/distributed/launch.py", line 189, in main
+    launch(args)
+  File "/home/gaojinwang/anaconda3/envs/amt/lib/python3.8/site-packages/torch/distributed/launch.py", line 174, in launch
+    run(args)
+  File "/home/gaojinwang/anaconda3/envs/amt/lib/python3.8/site-packages/torch/distributed/run.py", line 715, in run
+    elastic_launch(
+  File "/home/gaojinwang/anaconda3/envs/amt/lib/python3.8/site-packages/torch/distributed/launcher/api.py", line 131, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/gaojinwang/anaconda3/envs/amt/lib/python3.8/site-packages/torch/distributed/launcher/api.py", line 245, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+train.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2023-12-04_10:07:09
+  host      : amax
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 53555)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
